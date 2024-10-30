@@ -40,26 +40,6 @@ public class InventoryService : Server.InventoryService.InventoryServiceBase
 
     public override async Task<ProductResponse> UpdateProduct(UpdateProductRequest request, ServerCallContext context)
     {
-        //var existing = await _repository.GetProductAsync(request.ProductId);
-        //if (existing == null)
-        //    throw new RpcException(new Status(StatusCode.NotFound, "Product not found"));
-
-        //// Only update fields that are explicitly set in the request
-        //if (request.HasName)
-        //    existing.Name = request.Name;
-
-        //if (request.HasDescription)
-        //    existing.Description = request.Description;
-
-        //if (request.HasPrice)
-        //    existing.Price = (double)request.Price;
-
-        //if (request.HasStockAdjustment)
-        //    existing.Stock += request.StockAdjustment;
-
-        //var updated = await _repository.UpdateProductAsync(existing);
-        //return MapToProductResponse(updated);
-
         var existing = await _repository.GetProductAsync(request.ProductId);
         if (existing == null)
             throw new RpcException(new Status(StatusCode.NotFound, "Product not found"));
